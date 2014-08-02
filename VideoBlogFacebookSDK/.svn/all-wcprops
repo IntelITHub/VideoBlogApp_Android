@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/videoblog_android/!svn/ver/124/trunk/VideoBlogFacebookSDK
+END
+AndroidManifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/AndroidManifest.xml
+END
+build.xml
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/build.xml
+END
+project.properties
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/project.properties
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/videoblog_android/!svn/ver/114/trunk/VideoBlogFacebookSDK/.project
+END
+.classpath
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/.classpath
+END

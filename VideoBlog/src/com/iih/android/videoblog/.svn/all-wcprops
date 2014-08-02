@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/videoblog_android/!svn/ver/124/trunk/VideoBlog/src/com/iih/android/videoblog
+END
+CommonUtilities.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/videoblog_android/!svn/ver/109/trunk/VideoBlog/src/com/iih/android/videoblog/CommonUtilities.java
+END
+facebookPermissions.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/videoblog_android/!svn/ver/74/trunk/VideoBlog/src/com/iih/android/videoblog/facebookPermissions.java
+END
+WakeLocker.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/videoblog_android/!svn/ver/95/trunk/VideoBlog/src/com/iih/android/videoblog/WakeLocker.java
+END
+Termsandcondition.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/videoblog_android/!svn/ver/55/trunk/VideoBlog/src/com/iih/android/videoblog/Termsandcondition.java
+END
+Geolocalization.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/videoblog_android/!svn/ver/103/trunk/VideoBlog/src/com/iih/android/videoblog/Geolocalization.java
+END
+Language.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/videoblog_android/!svn/ver/121/trunk/VideoBlog/src/com/iih/android/videoblog/Language.java
+END
+LoginActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/videoblog_android/!svn/ver/121/trunk/VideoBlog/src/com/iih/android/videoblog/LoginActivity.java
+END
+GCMIntentService.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/videoblog_android/!svn/ver/110/trunk/VideoBlog/src/com/iih/android/videoblog/GCMIntentService.java
+END
+ServerUtilities.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/videoblog_android/!svn/ver/109/trunk/VideoBlog/src/com/iih/android/videoblog/ServerUtilities.java
+END
+ForgotPasswordDialog.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/videoblog_android/!svn/ver/113/trunk/VideoBlog/src/com/iih/android/videoblog/ForgotPasswordDialog.java
+END
+ConnectionDetector.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/videoblog_android/!svn/ver/106/trunk/VideoBlog/src/com/iih/android/videoblog/ConnectionDetector.java
+END
+RegisterActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/videoblog_android/!svn/ver/124/trunk/VideoBlog/src/com/iih/android/videoblog/RegisterActivity.java
+END
+SplashScreenActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/videoblog_android/!svn/ver/116/trunk/VideoBlog/src/com/iih/android/videoblog/SplashScreenActivity.java
+END

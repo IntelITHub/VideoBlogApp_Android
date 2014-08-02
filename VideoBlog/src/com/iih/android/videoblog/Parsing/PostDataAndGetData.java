@@ -1,0 +1,896 @@
+package com.iih.android.videoblog.Parsing;
+
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.net.HttpURLConnection;
+import java.net.SocketTimeoutException;
+import java.net.URL;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
+import java.util.List;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.conn.ConnectTimeoutException;
+import org.apache.http.entity.mime.HttpMultipartMode;
+import org.apache.http.entity.mime.MultipartEntity;
+import org.apache.http.entity.mime.content.FileBody;
+import org.apache.http.entity.mime.content.StringBody;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.params.BasicHttpParams;
+import org.apache.http.params.HttpConnectionParams;
+import org.apache.http.params.HttpParams;
+
+import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.AlertDialog.Builder;
+import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.net.wifi.WifiManager;
+import android.os.AsyncTask;
+import android.os.PowerManager;
+import android.os.PowerManager.WakeLock;
+import android.os.RecoverySystem.ProgressListener;
+import android.util.Base64;
+import android.util.Log;
+
+import com.iih.android.videoblog.LoginActivity;
+import com.iih.android.videoblog.R;
+import com.iih.android.videoblog.Parsing.JSONParser.JSONParsingListener;
+
+public class PostDataAndGetData extends AsyncTask<Void, Void, Boolean> implements JSONParsingListener, ProgressListener
+{
+
+  private final Activity activity;
+	private ProgressDialog dialog;
+	private final ArrayList<String> LTagName;
+	private String lType = "";
+	private HashMap<String, String> lParamter = new HashMap<String, String>();
+	private String jsonArrayResponce = "";
+	private String Lurl;
+	private Method methodTOcall;
+	private final String LOG = PostDataAndGetData.class.getName();
+	private int response = 0;
+	private boolean LocalcacheEnabled = false;
+	private boolean LocalshowinbuiltPorgressbar = false;
+	private int localCacheLifeCycle = 0;
+	private boolean iFileUpload = false;
+
+	/**
+	 * @param activityContext
+	 * @param TagName
+	 * @param Paramter
+	 * @param type
+	 * @param url
+	 * @param responceCode
+	 * @param CacheLifeCyle
+	 * @param cahceEnabled
+	 * @param showinbuiltPorgressbar
+	 */
+	public PostDataAndGetData(Activity activityContext, ArrayList<String> TagName, HashMap<String, String> Paramter,
+			String type, String url, int responseCode, int CacheLifeCyle, boolean cahceEnabled,
+			boolean showinbuiltPorgressbar)
+	{
+		activity = activityContext;
+		this.LTagName = TagName;
+		lParamter = Paramter;
+		lType = type;
+		Lurl = url;
+		cancel = false;
+		response = responseCode;
+		localCacheLifeCycle = CacheLifeCyle;
+		LocalcacheEnabled = cahceEnabled;
+		LocalshowinbuiltPorgressbar = showinbuiltPorgressbar;
+		Log.e("url","url of application "+url);
+		if (showinbuiltPorgressbar)
+		{
+			dialog = new ProgressDialog(activityContext,ProgressDialog.THEME_HOLO_LIGHT);
+		}
+	}
+
+	public PostDataAndGetData(Activity activityContext, ArrayList<String> TagName, HashMap<String, String> Paramter,
+			String type, String url, int responceCode, int CacheLifeCyle, boolean cahceEnabled)
+	{
+		this(activityContext, TagName, Paramter, type, url, responceCode, CacheLifeCyle, cahceEnabled, true);
+
+	}
+
+	public PostDataAndGetData(Activity activityContext, ArrayList<String> TagName, HashMap<String, String> Paramter,
+			String type, String url, int responceCode, int CacheLifeCyle)
+	{
+		this(activityContext, TagName, Paramter, type, url, responceCode, CacheLifeCyle, false);
+
+	}
+
+	public PostDataAndGetData(Activity a, HashMap<String, String> Paramter, String type, String url, int responceCode)
+	{
+		this(a, null, Paramter, type, url, responceCode, 0, false);
+	}
+
+	/**
+	 * For Base64 String upload this method is used
+	 * @param flag
+	 */
+	public void setFileUpload(boolean flag)
+	{
+		iFileUpload = flag;
+	}
+
+	@SuppressWarnings("rawtypes")
+	private void invokemethod(Object json)
+	{
+		try
+		{
+			Class partypes[] = new Class[2];
+			partypes[0] = Object.class;
+			partypes[1] = Integer.TYPE;
+			Object arglist[] = new Object[2];
+			arglist[0] = json;
+			arglist[1] = response;
+			try
+			{
+				methodTOcall = activity.getClass().getMethod("GetResult", partypes);
+				methodTOcall.invoke(activity, arglist);
+			}
+			catch (SecurityException e)
+			{
+				Log.e(LOG + " SecurityExceptionOn", " " + e.getMessage());
+			}
+			catch (NoSuchMethodException e)
+			{
+				Log.e(LOG + " NoSuchMethodException", " " + e.getMessage());
+			}
+			catch (IllegalArgumentException e)
+			{
+				Log.e(LOG + " IllegalArgumentException", " " + e.getMessage());
+			}
+			catch (IllegalAccessException e)
+			{
+				Log.e(LOG + " IllegalAccessException", " " + e.getMessage());
+			}
+			catch (InvocationTargetException e)
+			{
+				Log.e(LOG + " InvocationTargetException", " " + e.getMessage());
+			}
+		}
+		catch (Exception ex)
+		{
+			Log.e(LOG, ex.getMessage());
+		}
+	}
+
+	@Override
+	@SuppressWarnings("deprecation")
+	protected void onPreExecute()
+	{
+		if (LocalshowinbuiltPorgressbar)
+		{
+			this.dialog.setIcon(R.drawable.ic_launcher);
+			this.dialog.setTitle(activity.getString(R.string.please_wait));
+			this.dialog.setMessage(activity.getString(R.string.loading_));
+			this.dialog.setCancelable(false);
+			this.dialog.show();
+		}
+		PowerManager mPowerManager = (PowerManager) activity.getSystemService(Context.POWER_SERVICE);
+		mWakeHimUp = mPowerManager.newWakeLock(PowerManager.FULL_WAKE_LOCK, "MyLock");
+		mWakeHimUp.acquire();
+	}
+
+	private WakeLock mWakeHimUp;
+	private String ErrorType = "";
+
+	@Override
+	protected Boolean doInBackground(Void... arg0)
+	{
+		if (CheckUserOnline(activity) || checkWifi(activity))
+		{
+			try
+			{
+				if (lType.equalsIgnoreCase("POST"))
+				{
+					jsonArrayResponce = urlResponsePost();
+
+					Log.e("Print Responce", "Print Responce "+jsonArrayResponce);
+				}
+				else if (lType.equalsIgnoreCase("GET"))
+				{
+					jsonArrayResponce = urlResponseGet();
+				}
+			}
+			catch (Exception e)
+			{
+				Log.e("MyPharmacyOptions", "Error :: " + e);
+				ErrorType = e.getMessage();
+				success = false;
+			}
+			return success;
+		}
+		else
+		{
+			ErrorType = activity.getResources().getString(R.string.internetmsg);
+			success = false;
+			return success;
+		}
+	}
+
+	@Override
+	protected void onCancelled()
+	{
+		if (LocalshowinbuiltPorgressbar)
+		{
+			if (this.dialog.isShowing())
+			{
+				this.dialog.dismiss();
+			}
+
+		}
+		invokemethod(jsonData);
+		// Toast.makeText(activity, "Task has been canceled", 300).show();
+		cancel = true;
+	}
+
+	private boolean cancel = false;
+
+	@Override
+	protected void onPostExecute(Boolean result)
+	{
+		if (cancel)
+		{
+			cancel = false;
+		}
+		else
+		{
+			if (!result)
+			{
+				if (LocalshowinbuiltPorgressbar)
+				{
+					if (this.dialog.isShowing())
+					{
+						this.dialog.dismiss();
+					}
+				}
+				showCommonAlert(ErrorType, activity);
+			}
+			else
+			{
+				if (jsonData != null)
+				{
+					if (LocalshowinbuiltPorgressbar)
+					{
+						if (this.dialog.isShowing())
+						{
+							this.dialog.dismiss();
+						}
+					}
+					invokemethod(jsonData);
+				}
+				else
+				{
+					JSONParser jsonparser = new JSONParser();
+					jsonparser.setJSONParserListener(this);
+					if (LTagName != null)
+					{
+						String keys[] = new String[LTagName.size()];
+						LTagName.toArray(keys);
+						jsonparser.parseByKeys(jsonArrayResponce, keys);
+					}
+					else
+					{
+					jsonparser.parse(jsonArrayResponce);
+					}
+				}
+			}
+		}
+		mWakeHimUp.release();
+	}
+
+	private boolean success = true;
+
+	@SuppressWarnings("unused")
+	private String urlReponcePostWithOutAPI()
+	{
+		HttpClient httpclient = new DefaultHttpClient();
+		HttpPost httppost = new HttpPost(Lurl);
+		Iterator<String> myVeryOwnIterator = lParamter.keySet().iterator();
+		List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
+		try
+		{
+			while (myVeryOwnIterator.hasNext())
+			{
+				String key = myVeryOwnIterator.next();
+				String value = lParamter.get(key);
+				nameValuePairs.add(new BasicNameValuePair(key, value));
+			}
+			httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+			HttpResponse response = httpclient.execute(httppost);
+			BufferedReader reader = new BufferedReader(new InputStreamReader(response.getEntity().getContent(), "UTF-8"));
+			StringBuilder s = new StringBuilder();
+			while ((jsonArrayResponce = reader.readLine()) != null)
+			{
+				s = s.append(jsonArrayResponce);
+			}
+			jsonArrayResponce = new String(s);
+			 Log.e("Response for POst", jsonArrayResponce);
+		}
+		catch (Exception e)
+		{
+			ErrorType = e.getMessage();
+			success = false;
+		}
+		return jsonArrayResponce;
+	}
+
+	boolean isFilePost = false;
+	boolean isStringBody = false;
+
+	public void isStringBody(boolean isStringBody)
+	{
+		this.isStringBody = isStringBody;
+	}
+
+	/**
+	 * For Uploading Image as file , this method is used 
+	 * @param isFilePost
+	 */
+	public void isFilePost(boolean isFilePost)
+	{
+		this.isFilePost = isFilePost;
+		if (isFilePost && dialog != null)
+		{
+//			dialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+//			dialog.setMessage("Uploading...");
+		}
+	}
+
+	private HashMap<String, String> fileArray;
+	private long totalSize;
+
+	public void setFile(HashMap<String, String> fileArray)
+	{
+		this.fileArray = fileArray;
+	}
+
+	@SuppressWarnings("unchecked")
+	private String urlResponsePost()
+	{
+		 MultipartEntity reqEntity = new MultipartEntity(
+		 HttpMultipartMode.BROWSER_COMPATIBLE);
+//		CustomMultiPartEntity reqEntity = new CustomMultiPartEntity(HttpMultipartMode.BROWSER_COMPATIBLE, this);
+
+		Iterator<String> myVeryOwnIterator = lParamter.keySet().iterator();
+		HttpClient httpClient = null;
+		try
+		{
+			while (myVeryOwnIterator.hasNext())
+			{
+				String key = myVeryOwnIterator.next();
+				String value = lParamter.get(key);
+				reqEntity.addPart(key, new StringBody(value));
+				fileName += key + "?" + value;
+			}
+			if (isFilePost)
+			{
+
+				// dialog = new ProgressDialog(activity);
+				myVeryOwnIterator = fileArray.keySet().iterator();
+				while (myVeryOwnIterator.hasNext())
+				{
+					String key = myVeryOwnIterator.next();
+					String value = fileArray.get(key);
+					if (isStringBody)
+					{
+						reqEntity.addPart(key, BitMapToString(value));
+					}
+					else
+					{
+						if (!value.equalsIgnoreCase(""))
+						{
+							reqEntity.addPart(key, new FileBody(new File(value)));
+						}
+						else
+						{
+							reqEntity.addPart(key, new StringBody(value));
+						}
+					}
+
+					totalSize = reqEntity.getContentLength();
+
+					fileName += key + "?" + value;
+				}
+			}
+			Lurl = Lurl.replace(" ", "%20");
+			fileName += Lurl;
+			if (iFileUpload)
+			{
+				myVeryOwnIterator = fileArray.keySet().iterator();
+				while (myVeryOwnIterator.hasNext())
+				{
+					String key = myVeryOwnIterator.next();
+					reqEntity.addPart(key, BitMapToString(fileArray.get(key)));
+					fileName += key + "?" + key;
+				}
+			}
+			if (LocalcacheEnabled)
+			{
+
+				if (!perFormedCachingOnJson(fileName, localCacheLifeCycle))
+				{
+					String url = md5(fileName);
+					// Log.w("cache", "Reading");
+					jsonData = (ArrayList<Object>) sob.ReadingObject(url, activity);
+				}
+				if (jsonData == null)
+				{
+
+					HttpParams params = new BasicHttpParams();
+					HttpConnectionParams.setConnectionTimeout(params, 120000);
+					HttpConnectionParams.setSoTimeout(params, 120000);
+					DefaultHttpClient client = new DefaultHttpClient(params);
+					httpClient = new DefaultHttpClient();
+
+					// HttpParams params = httpClient.getParams();
+					// params.setParameter(CoreConnectionPNames.CONNECTION_TIMEOUT,
+					// new Integer(30000));
+					// params.setParameter(CoreConnectionPNames.SO_TIMEOUT, new
+					// Integer(30000));
+					// httpClient.setParams(params);
+
+					// HttpParams httpParameters = new BasicHttpParams();
+					// HttpConnectionParams.setConnectionTimeout(httpParameters,
+					// DataHandler.TIME_OUT); // Connection timeout
+					// HttpConnectionParams.setSoTimeout(httpParameters,
+					// DataHandler.TIME_OUT); // Socket timeout
+					// request.setParams(httpParameters);
+
+					HttpPost postRequest = new HttpPost(Lurl);
+					postRequest.setEntity(reqEntity);
+					HttpResponse response = httpClient.execute(postRequest);
+					BufferedReader reader = new BufferedReader(new InputStreamReader(response.getEntity().getContent(),"UTF-8"));
+					StringBuilder s = new StringBuilder();
+					while ((jsonArrayResponce = reader.readLine()) != null)
+					{
+						s = s.append(jsonArrayResponce);
+					}
+					jsonArrayResponce = new String(s);
+					// Log.v("Response for POst", jsonArrayResponce);
+				}
+			}
+			else
+			{
+				HttpParams http = new BasicHttpParams();
+				httpClient = new DefaultHttpClient(http);
+				HttpPost postRequest = new HttpPost(Lurl);
+				postRequest.setEntity(reqEntity);
+				HttpResponse response = httpClient.execute(postRequest);
+				BufferedReader reader = new BufferedReader(new InputStreamReader(response.getEntity().getContent(),"UTF-8"));
+				StringBuilder s = new StringBuilder();
+				while ((jsonArrayResponce = reader.readLine()) != null)
+				{
+					s = s.append(jsonArrayResponce);
+				}
+				jsonArrayResponce = new String(s);
+				// Log.v("Response for POst", jsonArrayResponce);
+			}
+		}
+		catch (ConnectTimeoutException e)
+		{
+			ErrorType = activity.getResources().getString(R.string.internetmsg);
+			success = false;
+		}
+		catch (SocketTimeoutException e)
+		{
+			ErrorType = activity.getResources().getString(R.string.str_server_not_responding);
+			success = false;
+		}
+		catch (Exception e)
+		{
+			ErrorType = activity.getResources().getString(R.string.str_something_went_worng);
+			success = false;
+		}
+		return jsonArrayResponce;
+	}
+
+	private String convertToURL(HashMap<String, String> appendData)
+	{
+		StringBuilder sbAppendToURL = null;
+		if (appendData != null)
+		{
+			Iterator<String> ikey = appendData.keySet().iterator();
+			sbAppendToURL = new StringBuilder();
+			while (ikey.hasNext())
+			{
+				String dataKey = ikey.next();
+				if (!dataKey.equalsIgnoreCase("") && !appendData.get(dataKey).equalsIgnoreCase(""))
+				{
+					sbAppendToURL.append(dataKey + "=" + appendData.get(dataKey) + "&");
+				}
+			}
+			if (!sbAppendToURL.toString().trim().equalsIgnoreCase(""))
+			{
+				return sbAppendToURL.toString().trim().substring(0, sbAppendToURL.toString().trim().length() - 1);
+			}
+		}
+		return "";
+	}
+
+	@SuppressWarnings("unchecked")
+	public String urlResponseGet()
+	{
+		HttpURLConnection urlConnection = null;
+		try
+		{
+			String strResult = convertToURL(lParamter);
+			Lurl += strResult;
+			Lurl = Lurl.trim();
+			Lurl = Lurl.replace(" ", "%20");
+			fileName = Lurl;
+			if (LocalcacheEnabled)
+			{
+				if (!perFormedCachingOnJson(fileName, localCacheLifeCycle))
+				{
+					String url = md5(fileName);
+					// Log.w("cache", "Reading");
+					jsonData = (ArrayList<Object>) sob.ReadingObject(url, activity);
+				}
+				if (jsonData == null)
+				{
+					URL urlforrequest = new URL(Lurl);
+					urlConnection = (HttpURLConnection) urlforrequest.openConnection();
+					urlConnection.setConnectTimeout(120000);// 1min
+					InputStream in = new BufferedInputStream(urlConnection.getInputStream());
+					BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+					StringBuilder str = new StringBuilder();
+					String line = null;
+					while ((line = reader.readLine()) != null)
+					{
+						str.append(line);
+					}
+					in.close();
+					jsonArrayResponce = str.toString();
+				}
+			}
+			else
+			{
+				URL urlforrequest = new URL(Lurl);
+				urlConnection = (HttpURLConnection) urlforrequest.openConnection();
+				urlConnection.setConnectTimeout(120000);// 1min
+				InputStream in = new BufferedInputStream(urlConnection.getInputStream());
+				BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+				StringBuilder str = new StringBuilder();
+				String line = null;
+				while ((line = reader.readLine()) != null)
+				{
+					str.append(line);
+				}
+				in.close();
+				jsonArrayResponce = str.toString();
+			}
+		}
+		catch (Exception e)
+		{
+			ErrorType = e.getMessage();
+			success = false;
+			// Log.e("urlResponseGet() ", e.getMessage().toString());
+		}
+		finally
+		{
+			if (urlConnection != null)
+			{
+				urlConnection.disconnect();
+			}
+		}
+		return jsonArrayResponce;
+	}
+
+	private void showCommonAlert(String message, final Activity _aActivity)
+	{
+		Builder builder = new AlertDialog.Builder(_aActivity);
+		try {
+			if (message.equalsIgnoreCase(""))
+			{
+				message = activity.getResources().getString(R.string.str_something_went_worng);
+			}
+		} catch (Exception e) {
+			message = activity.getResources().getString(R.string.str_something_went_worng);
+			e.printStackTrace();
+		}
+//		else if(message==null)
+//		{
+//			message = "Something went wrong.Please try after sometime.";
+//		}
+		builder.setMessage(message);
+		/*
+		 * TextView titleText = new TextView(activity);
+		 * titleText.setTypeface(null, Typeface.BOLD);
+		 * titleText.setTextSize(20);
+		 * titleText.setGravity(Gravity.CENTER_HORIZONTAL |
+		 * Gravity.CENTER_VERTICAL); //
+		 * titleText.setTextColor(activity.getResources().getColor( //
+		 * R.color.transparent_color)); titleText.setText("Internet Alert");
+		 * titleText.setPadding(0, 5, 5, 0);
+		 */
+		builder.setIcon(R.drawable.ic_launcher);
+		builder.setTitle(R.string.internet_alert);
+
+		builder.setCancelable(false);
+		builder.setPositiveButton("OK", new DialogInterface.OnClickListener()
+		{
+
+			@Override
+			public void onClick(DialogInterface d, int which)
+			{
+				if (LocalshowinbuiltPorgressbar)
+				{
+					if (dialog.isShowing())
+					{
+						dialog.dismiss();
+					}
+				}
+				d.dismiss();
+				//activity.finish();
+				Intent  intent = new Intent(activity,LoginActivity.class);
+				intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK); 
+				activity.startActivity(intent);
+				activity.finish();
+			}
+		});
+		AlertDialog alert = builder.create();
+
+		alert.show();
+	}
+
+	ArrayList<Object> jsonData = null;
+
+	@Override
+	public void onJSONParsingFinished(ArrayList<Object> jsonData, boolean isParsingSuccessful)
+	{
+		// Log.i("Check", "Date");
+		if (LocalshowinbuiltPorgressbar)
+		{
+			if (this.dialog.isShowing())
+			{
+				this.dialog.dismiss();
+			}
+		}
+		if (LocalcacheEnabled && jsonData.size() != 0)
+		{
+			saveCahceObject(jsonData);
+		}
+		invokemethod(jsonData);
+	}
+
+	/**
+	 * @param in
+	 * @return md4 string
+	 */
+	private String md5(String in)
+	{
+		MessageDigest digest;
+		try
+		{
+			digest = MessageDigest.getInstance("MD5");
+			digest.reset();
+			digest.update(in.getBytes());
+			byte[] a = digest.digest();
+			int len = a.length;
+			StringBuilder sb = new StringBuilder(len << 1);
+			for (int i = 0; i < len; i++)
+			{
+				sb.append(Character.forDigit((a[i] & 0xf0) >> 4, 16));
+				sb.append(Character.forDigit(a[i] & 0x0f, 16));
+			}
+			return sb.toString();
+		}
+		catch (NoSuchAlgorithmException e)
+		{
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	private final SerrializationOFObject sob = new SerrializationOFObject();
+
+	@SuppressWarnings("resource")
+	private boolean saveCahceObject(ArrayList<Object> jsonDataArrayList)
+	{
+		if (LocalcacheEnabled)
+		{
+			try
+			{
+				fileName = md5(fileName);
+				File file = new File(RooTAxis() + "/" + fileName);
+				FileOutputStream fos = new FileOutputStream(file);
+				fos.write(12);
+				// Log.d("First Modified Date",
+				// String.valueOf(file.lastModified()));
+				file.setLastModified(System.currentTimeMillis());
+				// Log.d("First Modified Date",
+				// String.valueOf(file.lastModified()));
+				// Log.d("First Modified Date",
+				// "Reading Alreay saved, modified=");
+				sob.SaveCompleteObject(jsonDataArrayList, fileName, activity);
+				return true;
+			}
+			catch (Exception e)
+			{
+				e.getMessage();
+				return false;
+			}
+		}
+		return false;
+	}
+
+	@SuppressWarnings(
+	{ "unchecked", "unused" })
+	private ArrayList<Object> GetCahceObject(String JSON_URL)
+	{
+		ArrayList<Object> jsonobject = null;
+		if (!perFormedCachingOnJson(JSON_URL, localCacheLifeCycle))
+		{
+			JSON_URL = md5(JSON_URL);
+			// Log.w("cache", "Reading");
+			jsonobject = (ArrayList<Object>) sob.ReadingObject(JSON_URL, activity);
+		}
+		return jsonobject;
+	}
+
+	public boolean perFormedCachingOnJson(String url, int cachLifelifeCycle)
+	{
+		String fileUrl = md5(url);
+		File file = new File(RooTAxis() + "/" + fileUrl);
+
+		long time = file.lastModified();
+		if (time == 0)
+		{
+			return true;
+		}
+		// Log.d("First Modified Date", String.valueOf(time));
+		time += cachLifelifeCycle;
+		Calendar calender = Calendar.getInstance();
+
+		long currentTime = calender.getTimeInMillis();
+		currentTime = System.currentTimeMillis();
+
+		if (currentTime < time)
+		{
+			return false;
+		}
+		else
+		{
+			return true;
+		}
+	}
+
+	private File cacheDir;
+	private final LinkedHashSet<String> allFile = new LinkedHashSet<String>();
+	private String fileName = "";
+
+	/**
+	 * @return root path
+	 */
+	private String RooTAxis()
+	{
+		if (android.os.Environment.getExternalStorageState().equals(android.os.Environment.MEDIA_MOUNTED))
+		{
+			cacheDir = new File(android.os.Environment.getExternalStorageDirectory(), "VideoList");
+		}
+		else
+		{
+			cacheDir = activity.getCacheDir();
+		}
+		if (!cacheDir.exists())
+		{
+			cacheDir.mkdirs();
+		}
+		File[] fileAll = cacheDir.listFiles();
+		for (File file : fileAll)
+		{
+			allFile.add(file.getAbsolutePath());
+		}
+		return cacheDir.getAbsolutePath();
+	}
+
+	private boolean CheckUserOnline(Context context)
+	{
+		try
+		{
+			ConnectivityManager conManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+			if (conManager == null)
+			{
+				return false;
+			}
+			NetworkInfo info = conManager.getActiveNetworkInfo();
+			if (info == null)
+			{
+				return false;
+			}
+			return info != null;
+
+		}
+		catch (Exception e)
+		{
+			e.getMessage();
+			return false;
+		}
+	}
+
+	private boolean checkWifi(Context context)
+	{
+		try
+		{
+			WifiManager ObjWifiManage = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
+			if (ObjWifiManage == null)
+			{
+				return false;
+			}
+
+			return ObjWifiManage.isWifiEnabled();
+
+		}
+		catch (Exception e)
+		{
+			e.getMessage();
+			return false;
+		}
+	}
+
+	/**
+	 * @param bitmap
+	 * @return converting bitmap and return a string
+	 */
+	@SuppressLint("NewApi")
+	public StringBody BitMapToString(String path)
+	{
+		UploadPicture uploadPicture = new UploadPicture(activity);
+		Bitmap bitmap = uploadPicture.setPic(path);
+		ByteArrayOutputStream baos = new ByteArrayOutputStream();
+		bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
+		byte[] b = baos.toByteArray();
+		StringBody stringBody = null;
+		try
+		{
+			stringBody = new StringBody(Base64.encodeToString(b, Base64.DEFAULT).toString());
+		}
+		catch (UnsupportedEncodingException e)
+		{
+			e.printStackTrace();
+		}
+		return stringBody;
+	}
+
+	public void transferred(long num)
+	{
+		// TODO Auto-generated method stub
+		int progress = (int) ((num / (float) totalSize) * 100);
+		dialog.setProgress(progress);
+	}
+
+	@Override
+	public void onProgress(int arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+}

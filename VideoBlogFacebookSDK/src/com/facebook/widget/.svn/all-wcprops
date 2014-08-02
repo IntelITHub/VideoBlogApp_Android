@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/widget
+END
+PickerFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/widget/PickerFragment.java
+END
+UserSettingsFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/widget/UserSettingsFragment.java
+END
+FacebookDialog.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/widget/FacebookDialog.java
+END
+GraphObjectPagingLoader.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/widget/GraphObjectPagingLoader.java
+END
+FriendPickerFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/widget/FriendPickerFragment.java
+END
+WebDialog.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/widget/WebDialog.java
+END
+LoginButton.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/widget/LoginButton.java
+END
+ProfilePictureView.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/widget/ProfilePictureView.java
+END
+FacebookFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/widget/FacebookFragment.java
+END
+PlacePickerFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/widget/PlacePickerFragment.java
+END
+GraphObjectCursor.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/widget/GraphObjectCursor.java
+END
+GraphObjectAdapter.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/widget/GraphObjectAdapter.java
+END
+SimpleGraphObjectCursor.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/widget/SimpleGraphObjectCursor.java
+END

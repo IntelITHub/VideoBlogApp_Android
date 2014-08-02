@@ -1,0 +1,70 @@
+10
+
+dir
+124
+https://192.168.1.100:4444/svn/videoblog_android/trunk/VideoBlogFacebookSDK/res
+https://192.168.1.100:4444/svn/videoblog_android
+
+
+
+2014-04-04T05:08:48.338061Z
+109
+jignesh
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+e4e2d6c1-0d7a-4b43-9c08-b0c99b0d05f5
+
+drawable
+dir
+
+drawable-hdpi
+dir
+
+drawable-ldpi
+dir
+
+drawable-mdpi
+dir
+
+drawable-xhdpi
+dir
+
+layout
+dir
+
+values
+dir
+
+values-es
+dir
+
+values-hdpi
+dir
+
+values-he
+dir
+
+values-iw
+dir
+
+values-ldpi
+dir
+
+values-mdpi
+dir
+
+values-xhdpi
+dir
+

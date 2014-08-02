@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/android
+END
+DialogError.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/android/DialogError.java
+END
+Facebook.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/android/Facebook.java
+END
+FbDialog.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/android/FbDialog.java
+END
+AsyncFacebookRunner.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/android/AsyncFacebookRunner.java
+END
+FacebookError.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/android/FacebookError.java
+END
+Util.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/android/Util.java
+END

@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/internal
+END
+ImageDownloader.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/internal/ImageDownloader.java
+END
+Logger.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/internal/Logger.java
+END
+NativeProtocol.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/internal/NativeProtocol.java
+END
+FileLruCache.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/internal/FileLruCache.java
+END
+PlatformServiceClient.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/internal/PlatformServiceClient.java
+END
+Utility.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/internal/Utility.java
+END
+CacheableRequestBatch.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/internal/CacheableRequestBatch.java
+END
+ImageResponseCache.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/internal/ImageResponseCache.java
+END
+SessionTracker.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/internal/SessionTracker.java
+END
+WorkQueue.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/internal/WorkQueue.java
+END
+AnalyticsEvents.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/internal/AnalyticsEvents.java
+END
+SessionAuthorizationType.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/internal/SessionAuthorizationType.java
+END
+ImageResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/internal/ImageResponse.java
+END
+ServerProtocol.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/internal/ServerProtocol.java
+END
+UrlRedirectCache.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/internal/UrlRedirectCache.java
+END
+Validate.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/internal/Validate.java
+END
+package-info.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/internal/package-info.java
+END
+ImageRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/internal/ImageRequest.java
+END

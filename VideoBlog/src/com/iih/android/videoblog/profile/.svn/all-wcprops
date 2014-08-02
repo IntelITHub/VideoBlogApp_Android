@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/videoblog_android/!svn/ver/121/trunk/VideoBlog/src/com/iih/android/videoblog/profile
+END
+EditProfileActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/videoblog_android/!svn/ver/118/trunk/VideoBlog/src/com/iih/android/videoblog/profile/EditProfileActivity.java
+END
+ProfileActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/videoblog_android/!svn/ver/118/trunk/VideoBlog/src/com/iih/android/videoblog/profile/ProfileActivity.java
+END
+UserPosListAdapter.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/videoblog_android/!svn/ver/118/trunk/VideoBlog/src/com/iih/android/videoblog/profile/UserPosListAdapter.java
+END
+UserPostListActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/videoblog_android/!svn/ver/121/trunk/VideoBlog/src/com/iih/android/videoblog/profile/UserPostListActivity.java
+END
+MyprofileListAdapter.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/videoblog_android/!svn/ver/110/trunk/VideoBlog/src/com/iih/android/videoblog/profile/MyprofileListAdapter.java
+END

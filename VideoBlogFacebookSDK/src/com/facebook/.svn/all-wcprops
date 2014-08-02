@@ -1,0 +1,221 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/videoblog_android/!svn/ver/115/trunk/VideoBlogFacebookSDK/src/com/facebook
+END
+AccessTokenSource.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/AccessTokenSource.java
+END
+Request.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/Request.java
+END
+GetTokenClient.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/GetTokenClient.java
+END
+InsightsLogger.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/InsightsLogger.java
+END
+HttpMethod.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/HttpMethod.java
+END
+AppLinkData.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/AppLinkData.java
+END
+FacebookSdkVersion.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/FacebookSdkVersion.java
+END
+TestSession.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/TestSession.java
+END
+AuthorizationClient.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/AuthorizationClient.java
+END
+NativeAppCallContentProvider.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/NativeAppCallContentProvider.java
+END
+FacebookDialogException.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/FacebookDialogException.java
+END
+Response.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/Response.java
+END
+LoginActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/videoblog_android/!svn/ver/115/trunk/VideoBlogFacebookSDK/src/com/facebook/LoginActivity.java
+END
+Session.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/Session.java
+END
+NativeAppCallAttachmentStore.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/NativeAppCallAttachmentStore.java
+END
+FacebookOperationCanceledException.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/FacebookOperationCanceledException.java
+END
+AccessToken.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/AccessToken.java
+END
+RequestAsyncTask.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/RequestAsyncTask.java
+END
+SessionDefaultAudience.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/SessionDefaultAudience.java
+END
+SharedPreferencesTokenCachingStrategy.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/SharedPreferencesTokenCachingStrategy.java
+END
+RequestBatch.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/RequestBatch.java
+END
+NonCachingTokenCachingStrategy.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/NonCachingTokenCachingStrategy.java
+END
+AppEventsLogger.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/AppEventsLogger.java
+END
+FacebookException.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/FacebookException.java
+END
+FacebookGraphObjectException.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/FacebookGraphObjectException.java
+END
+SessionLoginBehavior.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/SessionLoginBehavior.java
+END
+UiLifecycleHelper.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/UiLifecycleHelper.java
+END
+Settings.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/Settings.java
+END
+FacebookServiceException.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/FacebookServiceException.java
+END
+FacebookRequestError.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/FacebookRequestError.java
+END
+FacebookAuthorizationException.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/FacebookAuthorizationException.java
+END
+SessionState.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/SessionState.java
+END
+TokenCachingStrategy.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/TokenCachingStrategy.java
+END
+LegacyHelper.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/LegacyHelper.java
+END
+AppEventsConstants.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/AppEventsConstants.java
+END
+LoggingBehavior.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/facebook/LoggingBehavior.java
+END

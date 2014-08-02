@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/videoblog_android/!svn/ver/123/trunk/VideoBlog/src/com/iih/android/videoblog/newsfeed
+END
+AdapterNewsFeedList.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/videoblog_android/!svn/ver/121/trunk/VideoBlog/src/com/iih/android/videoblog/newsfeed/AdapterNewsFeedList.java
+END
+CommentActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/videoblog_android/!svn/ver/123/trunk/VideoBlog/src/com/iih/android/videoblog/newsfeed/CommentActivity.java
+END
+NewsFeedScreen.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/videoblog_android/!svn/ver/123/trunk/VideoBlog/src/com/iih/android/videoblog/newsfeed/NewsFeedScreen.java
+END
+VideoPlayer.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/videoblog_android/!svn/ver/117/trunk/VideoBlog/src/com/iih/android/videoblog/newsfeed/VideoPlayer.java
+END
+DownloadVideo.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/videoblog_android/!svn/ver/117/trunk/VideoBlog/src/com/iih/android/videoblog/newsfeed/DownloadVideo.java
+END
+CommentListAdapter.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/videoblog_android/!svn/ver/81/trunk/VideoBlog/src/com/iih/android/videoblog/newsfeed/CommentListAdapter.java
+END

@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/sromku/simple/fb/entities
+END
+Album.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/sromku/simple/fb/entities/Album.java
+END
+Feed.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/sromku/simple/fb/entities/Feed.java
+END
+Profile.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/sromku/simple/fb/entities/Profile.java
+END
+Language.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/sromku/simple/fb/entities/Language.java
+END
+Education.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/sromku/simple/fb/entities/Education.java
+END
+Location.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/sromku/simple/fb/entities/Location.java
+END
+Story.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/sromku/simple/fb/entities/Story.java
+END
+Photo.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/sromku/simple/fb/entities/Photo.java
+END
+Work.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/videoblog_android/!svn/ver/60/trunk/VideoBlogFacebookSDK/src/com/sromku/simple/fb/entities/Work.java
+END

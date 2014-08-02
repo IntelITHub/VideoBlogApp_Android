@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/videoblog_android/!svn/ver/117/trunk/VideoBlog/src/com/iih/android/videoblog/Parsing
+END
+UploadPicture.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/videoblog_android/!svn/ver/116/trunk/VideoBlog/src/com/iih/android/videoblog/Parsing/UploadPicture.java
+END
+NullUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/videoblog_android/!svn/ver/2/trunk/VideoBlog/src/com/iih/android/videoblog/Parsing/NullUtils.java
+END
+parseListner.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/videoblog_android/!svn/ver/2/trunk/VideoBlog/src/com/iih/android/videoblog/Parsing/parseListner.java
+END
+CustomDateTimePicker.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/videoblog_android/!svn/ver/2/trunk/VideoBlog/src/com/iih/android/videoblog/Parsing/CustomDateTimePicker.java
+END
+SerrializationOFObject.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/videoblog_android/!svn/ver/2/trunk/VideoBlog/src/com/iih/android/videoblog/Parsing/SerrializationOFObject.java
+END
+JSONParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/videoblog_android/!svn/ver/42/trunk/VideoBlog/src/com/iih/android/videoblog/Parsing/JSONParser.java
+END
+PostDataAndGetData.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/videoblog_android/!svn/ver/117/trunk/VideoBlog/src/com/iih/android/videoblog/Parsing/PostDataAndGetData.java
+END
+Utils.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/videoblog_android/!svn/ver/2/trunk/VideoBlog/src/com/iih/android/videoblog/Parsing/Utils.java
+END
+ExpImageLoader.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/videoblog_android/!svn/ver/102/trunk/VideoBlog/src/com/iih/android/videoblog/Parsing/ExpImageLoader.java
+END
